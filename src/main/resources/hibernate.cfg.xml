@@ -4,9 +4,10 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-     <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
-    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+     <property name="url" value="jdbc:postgresql://ec2-23-23-234-118.compute-1.amazonaws.com
+:5432/d65um5mi9eqkih"/>
+    <property name="username" value="bwgsmubfcldceu"/>
+    <property name="password" value="e484ddf42b469d7c8f1c6e693c102b6241e065f79e07e82c0a416ce0cc736c43"/>
     <mapping class="com.freegames.model.Game"/>
     <mapping class="com.freegames.model.User"/>
     <mapping class="com.freegames.model.Transaction"/>
