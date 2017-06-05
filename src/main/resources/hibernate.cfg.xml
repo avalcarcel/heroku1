@@ -4,9 +4,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/freegames?zeroDateTimeBehavior=convertToNull&amp;useTimezone=true&amp;serverTimezone=UTC</property>
-    <property name="hibernate.connection.username">root</property>
-    
+     <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
     <mapping class="com.freegames.model.Game"/>
     <mapping class="com.freegames.model.User"/>
     <mapping class="com.freegames.model.Transaction"/>
